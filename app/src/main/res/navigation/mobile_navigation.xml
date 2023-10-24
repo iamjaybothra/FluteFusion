@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    android:label="Audio"
+    app:startDestination="@id/nav_welcome">
+    <fragment
+        android:id="@+id/nav_store"
+        android:name="com.jaybothra.flutefusion.Fragments.StoreFragment"
+        android:label="Store"
+        tools:layout="@layout/fragment_store" />
+    <fragment
+        android:id="@+id/nav_tutorial"
+        android:name="com.jaybothra.flutefusion.Fragments.TutorialFragment"
+        android:label="Tutorial"
+        tools:layout="@layout/fragment_tutorial" />
+    <fragment
+        android:id="@+id/nav_maintain"
+        android:name="com.jaybothra.flutefusion.Fragments.MaintainFragment"
+        android:label="Maintain"
+        tools:layout="@layout/fragment_maintain" />
+    <fragment
+        android:id="@+id/nav_audio"
+        android:name="com.jaybothra.flutefusion.Fragments.TanpuraTablaFragment"
+        android:label="fragment_tanpura_tabla"
+        tools:layout="@layout/fragment_tanpura_tabla" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.jaybothra.flutefusion.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/nav_welcome"
+        android:name="com.jaybothra.flutefusion.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" />
+</navigation>
