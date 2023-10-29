@@ -34,7 +34,6 @@ public class StoreFragment extends Fragment {
     public StoreFragment() {
         // Required empty public constructor
     }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
