@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="4sp">
+    android:paddingStart="5dp"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
 
     <ImageView
         android:id="@+id/recycle_image"
@@ -12,9 +17,8 @@
         android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-<!--        app:srcCompat="@tools:sample/avatars" -->
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--        app:srcCompat="@tools:sample/avatars" -->
 
 
     <TextView
@@ -53,7 +57,7 @@
         app:layout_constraintStart_toStartOf="@+id/recycle_product"
         app:layout_constraintTop_toBottomOf="@+id/recycle_cut_price" />
 
-        <TextView
+    <TextView
         android:id="@+id/recycle_button"
         android:layout_width="0dp"
         android:layout_height="20sp"

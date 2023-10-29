@@ -69,15 +69,35 @@ public class StoreFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_store, container, false);
 
         ArrayList<Term> terms = new ArrayList<>();
-        terms.add(new Term(R.mipmap.ic_launcher, "E Base Flute", "400", "250", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Traditional Bamboo Bansuri", "150", "100", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Indian Bansuri with Carved Design", "200", "120", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Bansuri in Key of C", "180", "110", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Handcrafted Bansuri Flute", "220", "130", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Bamboo Bansuri with Velvet Bag", "250", "150", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Professional Bansuri - Key of G", "280", "170", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Bansuri for Beginners - Key of D", "120", "80", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Hand-Painted Bansuri with Peacock Design", "300", "180", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Bansuri Flute in Key of A", "210", "140", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Premium Quality Bansuri", "350", "200", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Rosewood Bansuri - Key of E", "270", "160", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Beginner's Bansuri with Instructional Booklet", "130", "90", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Bansuri in Key of Bb", "190", "120", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Artisan Crafted Bansuri", "320", "190", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Bansuri with Decorative Tassels", "230", "140", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Professional Bansuri - Key of F", "290", "170", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Bamboo Bansuri - Key of G#", "260", "150", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Exotic Bansuri with Brass Inlay", "380", "220", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "Traditional Bansuri with Velvet Case", "270", "160", "Add To Cart"));
+        terms.add(new Term(R.drawable.sample, "High-Quality Bansuri - Key of E", "330", "200", "Add To Cart"));
+
 
 
         RecyclerView recyclerView = view.findViewById(R.id.recycle);
 
 
 
-       recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+//       recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
 
 

@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_tutorial" />
     <fragment
         android:id="@+id/nav_maintain"
-        android:name="com.jaybothra.flutefusion.Fragments.MaintainFragment"
+        android:name="com.jaybothra.flutefusion.ViewPager.MaintainFragment"
         android:label="Maintain"
         tools:layout="@layout/fragment_maintain" />
     <fragment

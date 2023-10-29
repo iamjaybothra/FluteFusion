@@ -37,11 +37,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
         Term term = termArrayList.get(position);
 
-//        holder.image.setImageResource(term.getImage());
+        holder.image.setImageResource(term.getImage());
         holder.fluteName.setText(term.getFluteName());
         holder.priceCut.setText(term.getPriceCut());
         holder.price.setText(term.getPrice());
-        holder.addToCart.setTextContent(term.getAddToCart());
+        holder.addToCart.setText(term.getAddToCart());
     }
 
 
@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return termArrayList.size();
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder{
@@ -57,7 +57,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         protected TextView fluteName;
         protected TextView priceCut;
         protected TextView price;
-        protected Text addToCart;
+        protected TextView addToCart;
 
         public CustomViewHolder(View view){
             super(view);
