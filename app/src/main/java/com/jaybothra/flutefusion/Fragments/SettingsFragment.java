@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.preference.PreferenceFragmentCompat;
 
+import com.jaybothra.flutefusion.R;
+
 public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
