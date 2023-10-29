@@ -1,4 +1,4 @@
-package com.jaybothra.flutefusion.Fragments;
+package com.jaybothra.flutefusion.ViewPager;
 
 import android.os.Bundle;
 
