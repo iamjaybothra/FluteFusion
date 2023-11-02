@@ -1,72 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingStart="5dp"
-    android:paddingLeft="5dp"
-    android:paddingTop="5dp"
-    android:paddingEnd="5dp"
-    android:paddingRight="5dp"
-    android:paddingBottom="5dp">
+    app:cardCornerRadius="25dp"
+    app:cardUseCompatPadding="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/recycle_image"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--        app:srcCompat="@tools:sample/avatars" -->
-
-
-    <TextView
-        android:id="@+id/recycle_product"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
-        android:text="dfgshbadeghbnadghnbadegbhadgbhbhad"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/recycle_cut_price"
-        app:layout_constraintStart_toEndOf="@+id/recycle_image"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp">
 
-    <TextView
-        android:id="@+id/recycle_cut_price"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:text="q345tgyaetaeeqtheqt"
-        android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/recycle_product"
-        app:layout_constraintTop_toBottomOf="@+id/recycle_product" />
 
-    <TextView
-        android:id="@+id/recycle_price"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="4dp"
-        android:text="TextView"
-        android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/recycle_product"
-        app:layout_constraintTop_toBottomOf="@+id/recycle_cut_price" />
+        <ImageView
+            android:id="@+id/recycle_image"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--        app:srcCompat="@tools:sample/avatars" -->
 
-    <TextView
-        android:id="@+id/recycle_button"
-        android:layout_width="0dp"
-        android:layout_height="20sp"
-        android:background="@drawable/round_button"
-        android:padding="4sp"
-        android:text="Add To Cart"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycle_price" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/recycle_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="14sp"
+            android:maxLines="4"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:text="dfgshbadeghbnadghnbadegbhadgbhbhad"
+            android:textSize="14sp"
+            app:lastBaselineToBottomHeight="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/recycle_cut_price"
+            app:layout_constraintStart_toEndOf="@+id/recycle_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="3dp" />
+
+        <TextView
+            android:id="@+id/recycle_cut_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="q345tgyaetaeeqtheqt"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/recycle_product"
+            app:layout_constraintTop_toBottomOf="@+id/recycle_product" />
+
+        <TextView
+            android:id="@+id/recycle_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="TextView"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/recycle_product"
+            app:layout_constraintTop_toBottomOf="@+id/recycle_cut_price" />
+
+        <TextView
+            android:id="@+id/recycle_button"
+            android:layout_width="0dp"
+            android:layout_height="20sp"
+            android:background="@drawable/round_button"
+            android:padding="4sp"
+            android:text="Add To Cart"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recycle_price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
