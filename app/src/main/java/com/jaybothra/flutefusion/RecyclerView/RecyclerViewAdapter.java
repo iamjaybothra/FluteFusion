@@ -3,25 +3,22 @@ package com.jaybothra.flutefusion.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.jaybothra.flutefusion.JavaBeans.ListItems;
 import com.jaybothra.flutefusion.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder> {
 
-    ArrayList<Term> termArrayList;
-    public RecyclerViewAdapter(ArrayList<Term> terms){
-        this.termArrayList = terms;
+    ArrayList<ListItems> listItemsArrayList;
+    public RecyclerViewAdapter(ArrayList<ListItems> listItems){
+        this.listItemsArrayList = listItems;
     }
 
     @NonNull
@@ -35,13 +32,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
-        Term term = termArrayList.get(position);
+        ListItems listItems = listItemsArrayList.get(position);
 
-        holder.image.setImageResource(term.getImage());
-        holder.fluteName.setText(term.getFluteName());
-        holder.priceCut.setText(term.getPriceCut());
-        holder.price.setText(term.getPrice());
-        holder.addToCart.setText(term.getAddToCart());
+        holder.image.setImageResource(listItems.getImage());
+        holder.fluteName.setText(listItems.getFluteName());
+        holder.priceCut.setText(listItems.getPriceCut());
+        holder.price.setText(listItems.getPrice());
+        holder.addToCart.setText(listItems.getAddToCart());
     }
 
 
@@ -49,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return termArrayList.size();
+        return listItemsArrayList.size();
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder{

@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/list_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
@@ -37,12 +37,15 @@
             android:id="@+id/list_cutPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="41dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="TextView"
-            app:layout_constraintEnd_toStartOf="@+id/list_product"
+            app:layout_constraintBottom_toTopOf="@+id/list_price"
             app:layout_constraintStart_toEndOf="@+id/list_image"
-            app:layout_constraintTop_toBottomOf="@+id/list_product" />
+            app:layout_constraintStart_toStartOf="@+id/list_price"
+            app:layout_constraintTop_toBottomOf="@+id/list_product"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/list_price"
@@ -59,7 +62,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/round_button"
+            android:padding="4dp"
+            android:paddingStart="4dp"
+            android:paddingLeft="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="4dp"
             android:text="TextView"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/list_price" />
     </androidx.constraintlayout.widget.ConstraintLayout>

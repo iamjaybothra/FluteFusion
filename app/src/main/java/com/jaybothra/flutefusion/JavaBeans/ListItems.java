@@ -1,13 +1,13 @@
-package com.jaybothra.flutefusion.RecyclerView;
+package com.jaybothra.flutefusion.JavaBeans;
 
-public class Term {
+public class ListItems {
     private int image;
     private String fluteName;
     private String priceCut;
     private String price;
     private String addToCart;
 
-    public Term(int image, String fluteName, String priceCut, String price, String addToCart) {
+    public ListItems(int image, String fluteName, String priceCut, String price, String addToCart) {
         this.image = image;
         this.fluteName = fluteName;
         this.priceCut = priceCut;
@@ -33,7 +33,7 @@ public class Term {
     }
 
     public String getPriceCut() {
-        return priceCut;
+        return "Price Before : $" + priceCut;
     }
 
     public void setPriceCut(String priceCut) {
@@ -41,7 +41,7 @@ public class Term {
     }
 
     public String getPrice() {
-        return price;
+        return "After Discount : $" + price;
     }
 
     public void setPrice(String price) {
