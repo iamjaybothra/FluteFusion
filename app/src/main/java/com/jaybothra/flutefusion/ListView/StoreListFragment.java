@@ -67,6 +67,8 @@ public class StoreListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
         View view = inflater.inflate(R.layout.fragment_store_list, container, false);
 
 
@@ -104,14 +106,6 @@ public class StoreListFragment extends Fragment {
 
 
         listView.setAdapter(adapter2);
-
-
-
-
-
-
-
-
         return view;
     }
 }

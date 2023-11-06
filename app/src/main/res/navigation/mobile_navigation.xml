@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     android:label="Audio"
-    app:startDestination="@id/nav_storeList">
+    app:startDestination="@id/nav_store">
     <fragment
         android:id="@+id/nav_store"
         android:name="com.jaybothra.flutefusion.RecyclerView.StoreFragment"
@@ -39,9 +39,4 @@
         android:name="com.jaybothra.flutefusion.ListView.StoreListFragment"
         android:label="fragment_store_list"
         tools:layout="@layout/fragment_store_list" />
-    <fragment
-        android:id="@+id/nav_fluteStore"
-        android:name="com.jaybothra.flutefusion.FluteStoreFragment"
-        android:label="fragment_flute_store"
-        tools:layout="@layout/fragment_flute_store" />
 </navigation>

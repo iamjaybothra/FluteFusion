@@ -3,8 +3,11 @@ package com.jaybothra.flutefusion.RecyclerView;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,8 +101,12 @@ public class StoreFragment extends Fragment {
 //       recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
-
-
+        boolean isOn = PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("show_store_list", false);
+        if(isOn){
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        }else{
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        }
 
         recyclerView.setAdapter(new RecyclerViewAdapter(listItems));
         return view;

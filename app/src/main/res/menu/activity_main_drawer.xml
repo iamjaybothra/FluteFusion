@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Welcome" />
         <item
-            android:id="@+id/nav_fluteStore"
+            android:id="@+id/nav_store"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Store" />
         <item

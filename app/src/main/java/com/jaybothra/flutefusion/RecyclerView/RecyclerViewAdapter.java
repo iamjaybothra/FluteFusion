@@ -24,7 +24,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle_row, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row, null);
 
         return new CustomViewHolder(view);
     }
@@ -58,11 +58,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public CustomViewHolder(View view){
             super(view);
-            this.image = view.findViewById(R.id.recycle_image);
-            this.fluteName = view.findViewById(R.id.recycle_product);
-            this.priceCut = view.findViewById(R.id.recycle_cut_price);
-            this.price = view.findViewById(R.id.recycle_price);
-            this.addToCart = view.findViewById(R.id.recycle_button);
+            this.image = view.findViewById(R.id.list_image);
+            this.fluteName = view.findViewById(R.id.list_product);
+            this.priceCut = view.findViewById(R.id.list_cutPrice);
+            this.price = view.findViewById(R.id.list_price);
+            this.addToCart = view.findViewById(R.id.list_addToCart);
 
         }
     }
