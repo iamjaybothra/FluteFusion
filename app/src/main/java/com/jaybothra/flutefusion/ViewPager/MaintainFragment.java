@@ -7,43 +7,38 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jaybothra.flutefusion.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MaintainFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class MaintainFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final String ARG_IMAGE_RESOURCE = "vp_img";
+    private static final String ARG_TITLE = "vp_title";
+    private static final String ARG_TEXT1 = "vp1";
+    private static final String ARG_TEXT2 = "vp2";
+    private static final String ARG_TEXT3 = "vp3";
+
+    private int vpImg;
+    private String vpTitle;
+    private String vpt1;
+    private String vpt2;
+    private String vpt3;
 
     public MaintainFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MaintainFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MaintainFragment newInstance(String param1, String param2) {
+    public static MaintainFragment newInstance(String vpTitle, int vpImg, String vpt1, String vpt2, String vpt3) {
         MaintainFragment fragment = new MaintainFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(ARG_TITLE, vpTitle);
+        args.putInt(ARG_IMAGE_RESOURCE, vpImg);
+        args.putString(ARG_TEXT1, vpt1);
+        args.putString(ARG_TEXT2, vpt2);
+        args.putString(ARG_TEXT3, vpt3);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,15 +47,34 @@ public class MaintainFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            vpTitle = getArguments().getString(ARG_TITLE);
+            vpImg = getArguments().getInt(ARG_IMAGE_RESOURCE);
+            vpt1 = getArguments().getString(ARG_TEXT1);
+            vpt2 = getArguments().getString(ARG_TEXT2);
+            vpt3 = getArguments().getString(ARG_TEXT3);
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_maintain, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_maintain, container, false);
+        TextView VPTitle = view.findViewById(R.id.vp_title);
+        ImageView VPImage = view.findViewById(R.id.vp_img);
+        TextView VPT1 = view.findViewById(R.id.vp1);
+        TextView VPT2 = view.findViewById(R.id.vp2);
+        TextView VPT3 = view.findViewById(R.id.vp3);
+
+
+        VPTitle.setText(vpTitle);
+        VPImage.setImageResource(vpImg);
+        VPT1.setText(vpt1);
+        VPT2.setText(vpt2);
+        VPT3.setText(vpt3);
+
+
+        return view;
     }
 }

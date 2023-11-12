@@ -17,9 +17,9 @@
         tools:layout="@layout/fragment_tutorial" />
     <fragment
         android:id="@+id/nav_maintain"
-        android:name="com.jaybothra.flutefusion.ViewPager.MaintainFragment"
+        android:name="com.jaybothra.flutefusion.ViewPager.VPHostFragment"
         android:label="Maintain"
-        tools:layout="@layout/fragment_maintain" />
+        tools:layout="@layout/fragment_v_p_host" />
     <fragment
         android:id="@+id/nav_audio"
         android:name="com.jaybothra.flutefusion.Fragments.TanpuraTablaFragment"
