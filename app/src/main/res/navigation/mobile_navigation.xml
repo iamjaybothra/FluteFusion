@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_store" />
     <fragment
         android:id="@+id/nav_tutorial"
-        android:name="com.jaybothra.flutefusion.Fragments.TutorialFragment"
+        android:name="com.jaybothra.flutefusion.ListView.TutorialFragment"
         android:label="Tutorial"
         tools:layout="@layout/fragment_tutorial" />
     <fragment
