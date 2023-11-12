@@ -9,20 +9,12 @@
     tools:context=".ViewPager.VPHostFragment"
     android:orientation="vertical">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/fact_tab_layout"
-        android:layout_width="match_parent"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"/>
-
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="34sp"
-        android:textStyle="bold"
-        android:id="@+id/viewpager"/>
+        android:textStyle="bold" />
 
 </LinearLayout>
