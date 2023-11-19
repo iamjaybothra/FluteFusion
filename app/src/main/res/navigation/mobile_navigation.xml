@@ -40,7 +40,7 @@
         tools:layout="@layout/fragment_welcome" />
     <fragment
         android:id="@+id/tutorialDetailsFragment"
-        android:name="com.jaybothra.flutefusion.TutorialDetailsFragment"
+        android:name="com.jaybothra.flutefusion.ListView.TutorialDetailsFragment"
         android:label="fragment_tutorial_details"
         tools:layout="@layout/fragment_tutorial_details" />
 </navigation>

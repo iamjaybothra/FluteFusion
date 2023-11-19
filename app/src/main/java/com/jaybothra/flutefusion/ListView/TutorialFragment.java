@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,20 +73,28 @@ public class TutorialFragment extends Fragment {
         ListView listView = view.findViewById(R.id.listview);
 
         ArrayList<TutorialItems> items = new ArrayList<>();
-        items.add(new TutorialItems("Tutorial 1", R.drawable.vpimg1, "Click to Check Details"));
-        items.add(new TutorialItems("Tutorial 2", R.drawable.vpimg1, "Click to Check Details"));
-        items.add(new TutorialItems("Tutorial 3", R.drawable.vpimg1, "Click to Check Details"));
-        items.add(new TutorialItems("Tutorial 4", R.drawable.vpimg1, "Click to Check Details"));
+        items.add(new TutorialItems("Tutorial 1", R.mipmap.ic_launcher, "Click to Check Details"));
+        items.add(new TutorialItems("Tutorial 2", R.mipmap.ic_launcher, "Click to Check Details"));
+        items.add(new TutorialItems("Tutorial 3", R.mipmap.ic_launcher, "Click to Check Details"));
+        items.add(new TutorialItems("Tutorial 4", R.mipmap.ic_launcher, "Click to Check Details"));
 
         ListViewAdapter adapter = new ListViewAdapter(getContext(), items);
         listView.setAdapter(adapter);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Bundle bundle = new Bundle();
+                bundle.putString("title", items.get(i).getSteps());
+                bundle.putInt("image", items.get(i).getImage());
+                bundle.putString("details", items.get(i).getDetails());
+
                 Navigation.findNavController(view)
-                        .navigate(R.id.action_nav_tutorial_to_tutorialDetailsFragment);
+                        .navigate(R.id.action_nav_tutorial_to_tutorialDetailsFragment, bundle);
+                Log.d("TutorialFragment", "Item Clicked: " + items.get(i).getSteps());
             }
         });
+
         return view;
     }
 

@@ -1,12 +1,17 @@
-package com.jaybothra.flutefusion;
+package com.jaybothra.flutefusion.ListView;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.jaybothra.flutefusion.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +19,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class TutorialDetailsFragment extends Fragment {
+    private TextView stepsTextView;
+    private ImageView imageView;
+    private TextView detailsTextView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +67,28 @@ public class TutorialDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tutorial_details, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_tutorial_details, container, false);
+
+        TextView stepsTextView = view.findViewById(R.id.d_steps);
+        ImageView imageView = view.findViewById(R.id.d_img);
+        TextView detailsTextView = view.findViewById(R.id.d_details);
+
+
+        // Retrieve arguments
+        Bundle args = getArguments();
+        if (args != null) {
+            String title = args.getString("title");
+            int imageResource = args.getInt("image");
+            String details = args.getString("details");
+
+            // Set data to views
+            stepsTextView.setText(title);
+            imageView.setImageResource(imageResource);
+            detailsTextView.setText(details);
+        }
+
+        return view;
+
     }
 }
