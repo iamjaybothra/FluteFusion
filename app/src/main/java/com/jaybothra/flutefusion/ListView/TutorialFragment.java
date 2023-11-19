@@ -3,12 +3,18 @@ package com.jaybothra.flutefusion.ListView;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.jaybothra.flutefusion.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +67,28 @@ public class TutorialFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tutorial, container, false);
+        View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
+
+        ListView listView = view.findViewById(R.id.listview);
+
+        ArrayList<TutorialItems> items = new ArrayList<>();
+        items.add(new TutorialItems("Tutorial 1", R.drawable.vpimg1, "Click to Check Details"));
+        items.add(new TutorialItems("Tutorial 2", R.drawable.vpimg1, "Click to Check Details"));
+        items.add(new TutorialItems("Tutorial 3", R.drawable.vpimg1, "Click to Check Details"));
+        items.add(new TutorialItems("Tutorial 4", R.drawable.vpimg1, "Click to Check Details"));
+
+        ListViewAdapter adapter = new ListViewAdapter(getContext(), items);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_nav_tutorial_to_tutorialDetailsFragment);
+            }
+        });
+        return view;
     }
+
+
+
 }
