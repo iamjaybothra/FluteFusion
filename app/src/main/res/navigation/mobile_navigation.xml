@@ -37,7 +37,20 @@
         android:id="@+id/nav_welcome"
         android:name="com.jaybothra.flutefusion.Fragments.WelcomeFragment"
         android:label="Welcome to Flute"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_store"
+            app:destination="@id/nav_store" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_maintain"
+            app:destination="@id/nav_maintain" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_audio"
+            app:destination="@id/nav_audio" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_tutorial"
+            app:destination="@id/nav_tutorial" />
+    </fragment>
     <fragment
         android:id="@+id/tutorialDetailsFragment"
         android:name="com.jaybothra.flutefusion.ListView.TutorialDetailsFragment"
