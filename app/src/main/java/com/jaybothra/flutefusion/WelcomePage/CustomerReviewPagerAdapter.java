@@ -48,6 +48,8 @@ public class CustomerReviewPagerAdapter extends PagerAdapter {
         ratingBar.setRating(review.getRating());
         reviewTextView.setText(review.getReviewText());
         ratingBar.setClickable(false);
+        ratingBar.setIsIndicator(true);
+
 
         parent.addView(view);
         return view;

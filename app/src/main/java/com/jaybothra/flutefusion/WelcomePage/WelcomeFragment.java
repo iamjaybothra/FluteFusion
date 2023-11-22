@@ -5,11 +5,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -70,9 +72,13 @@ public class WelcomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
+        View view = inflater.inflate(R.layout.fragment_welcome, container, false);
 
-        viewPager = rootView.findViewById(R.id.viewPagerCustomerReviews);
+        viewPager = view.findViewById(R.id.viewPagerCustomerReviews);
+        Button storeBtn = view.findViewById(R.id.storeBtn);
+        Button maintainBtn = view.findViewById(R.id.maintainBtn);
+        Button tutorialBtn = view.findViewById(R.id.tutorialBtn);
+        Button audioBtn = view.findViewById(R.id.audioBtn);
 
         List<CustomerReview> customerReviews = new ArrayList<>();
         customerReviews.add(new CustomerReview(R.drawable.sample, 5f, "Great app! Very useful."));
@@ -82,7 +88,27 @@ public class WelcomeFragment extends Fragment {
         adapter = new CustomerReviewPagerAdapter(customerReviews);
         viewPager.setAdapter(adapter);
 
-        return rootView;
+        storeBtn.setOnClickListener(e->{
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_welcome_to_nav_store);
+        });
+
+        maintainBtn.setOnClickListener(e->{
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_welcome_to_nav_maintain);
+        });
+
+        tutorialBtn.setOnClickListener(e->{
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_welcome_to_nav_tutorial);
+        });
+
+        audioBtn.setOnClickListener(e->{
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_welcome_to_nav_audio);
+        });
+
+        return view;
     }
 
 }
