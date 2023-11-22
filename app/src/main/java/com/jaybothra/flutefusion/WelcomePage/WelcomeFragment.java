@@ -2,7 +2,10 @@ package com.jaybothra.flutefusion.WelcomePage;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +15,17 @@ import android.widget.TextView;
 
 import com.jaybothra.flutefusion.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link WelcomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class WelcomeFragment extends Fragment {
+    private ViewPager viewPager;
+    private CustomerReviewPagerAdapter adapter;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,9 +67,22 @@ public class WelcomeFragment extends Fragment {
         }
     }
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
 
-       return inflater.inflate(R.layout.fragment_welcome, container, false);
+        viewPager = rootView.findViewById(R.id.viewPagerCustomerReviews);
+
+        List<CustomerReview> customerReviews = new ArrayList<>();
+        customerReviews.add(new CustomerReview(R.drawable.sample, 5f, "Great app! Very useful."));
+        customerReviews.add(new CustomerReview(R.drawable.sample, 4f, "I love the features. Highly recommended!"));
+        customerReviews.add(new CustomerReview(R.drawable.sample, 3f, "Easy to use and intuitive."));
+
+        adapter = new CustomerReviewPagerAdapter(customerReviews);
+        viewPager.setAdapter(adapter);
+
+        return rootView;
     }
+
 }
