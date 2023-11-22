@@ -1,4 +1,4 @@
-package com.jaybothra.flutefusion.JavaBeans;
+package com.jaybothra.flutefusion.RecyclerView;
 
 public class ListItems {
     private int image;

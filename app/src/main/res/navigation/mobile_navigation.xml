@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     android:label="Audio"
-    app:startDestination="@id/nav_store">
+    app:startDestination="@id/nav_welcome">
     <fragment
         android:id="@+id/nav_store"
         android:name="com.jaybothra.flutefusion.RecyclerView.StoreFragment"
@@ -12,9 +12,13 @@
         tools:layout="@layout/fragment_store" />
     <fragment
         android:id="@+id/nav_tutorial"
-        android:name="com.jaybothra.flutefusion.Fragments.TutorialFragment"
+        android:name="com.jaybothra.flutefusion.ListView.TutorialFragment"
         android:label="Tutorial"
-        tools:layout="@layout/fragment_tutorial" />
+        tools:layout="@layout/fragment_tutorial" >
+        <action
+            android:id="@+id/action_nav_tutorial_to_tutorialDetailsFragment"
+            app:destination="@id/tutorialDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_maintain"
         android:name="com.jaybothra.flutefusion.ViewPager.VPHostFragment"
@@ -31,7 +35,25 @@
         android:label="SettingsFragment" />
     <fragment
         android:id="@+id/nav_welcome"
-        android:name="com.jaybothra.flutefusion.Fragments.WelcomeFragment"
+        android:name="com.jaybothra.flutefusion.WelcomePage.WelcomeFragment"
         android:label="Welcome to Flute"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_store"
+            app:destination="@id/nav_store" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_maintain"
+            app:destination="@id/nav_maintain" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_audio"
+            app:destination="@id/nav_audio" />
+        <action
+            android:id="@+id/action_nav_welcome_to_nav_tutorial"
+            app:destination="@id/nav_tutorial" />
+    </fragment>
+    <fragment
+        android:id="@+id/tutorialDetailsFragment"
+        android:name="com.jaybothra.flutefusion.ListView.TutorialDetailsFragment"
+        android:label="fragment_tutorial_details"
+        tools:layout="@layout/fragment_tutorial_details" />
 </navigation>

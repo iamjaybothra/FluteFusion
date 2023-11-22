@@ -4,7 +4,6 @@ import android.os.Bundle;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
-import com.jaybothra.flutefusion.ListView.StoreListFragment;
 import com.jaybothra.flutefusion.R;
 import com.jaybothra.flutefusion.RecyclerView.StoreFragment;
 
