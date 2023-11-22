@@ -35,7 +35,7 @@
         android:label="SettingsFragment" />
     <fragment
         android:id="@+id/nav_welcome"
-        android:name="com.jaybothra.flutefusion.Fragments.WelcomeFragment"
+        android:name="com.jaybothra.flutefusion.WelcomePage.WelcomeFragment"
         android:label="Welcome to Flute"
         tools:layout="@layout/fragment_welcome" >
         <action
