@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/arsenal_bold_italic</item>
+        <item>@font/bowlby_one_sc</item>
         <item>@font/bree_serif</item>
+        <item>@font/donegal_one</item>
     </array>
 </resources>

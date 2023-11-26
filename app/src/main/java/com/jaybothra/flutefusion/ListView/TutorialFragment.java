@@ -73,7 +73,41 @@ public class TutorialFragment extends Fragment {
         ListView listView = view.findViewById(R.id.listview);
 
         ArrayList<TutorialItems> items = new ArrayList<>();
-        items.add(new TutorialItems(TContent.T1_TITLE, R.mipmap.ic_launcher, "Click to Check Details", "a", "b", "c", "d"));
+        items.add(new TutorialItems(TContent.T1_TITLE,
+                TContent.T1_IMAGE,
+                "1.) " + TContent.T1_DETAILS1,
+                "2.) " + TContent.T1_DETAILS2,
+                "3.) " + TContent.T1_DETAILS3,
+                "4.) " + TContent.T1_DETAILS4,
+                "5.) " + TContent.T1_DETAILS5));
+        items.add(new TutorialItems(TContent.T2_TITLE,
+                TContent.T2_IMAGE,
+                "1.) " + TContent.T2_DETAILS1,
+                "2.) " + TContent.T2_DETAILS2,
+                "3.) " + TContent.T2_DETAILS3,
+                "4.) " + TContent.T2_DETAILS4,
+                "5.) " + TContent.T2_DETAILS5));
+        items.add(new TutorialItems(TContent.T3_TITLE,
+                TContent.T3_IMAGE,
+                "1.) " + TContent.T3_DETAILS1,
+                "2.) " + TContent.T3_DETAILS2,
+                "3.) " + TContent.T3_DETAILS3,
+                "4.) " + TContent.T3_DETAILS4,
+                "5.) " + TContent.T3_DETAILS5));
+        items.add(new TutorialItems(TContent.T4_TITLE,
+                TContent.T4_IMAGE,
+                "1.) " + TContent.T4_DETAILS1,
+                "2.) " + TContent.T4_DETAILS2,
+                "3.) " + TContent.T4_DETAILS3,
+                "4.) " + TContent.T4_DETAILS4,
+                "5.) " + TContent.T4_DETAILS5));
+        items.add(new TutorialItems(TContent.T5_TITLE,
+                TContent.T5_IMAGE,
+                "1.) " + TContent.T5_DETAILS1,
+                "2.) " + TContent.T5_DETAILS2,
+                "3.) " + TContent.T5_DETAILS3,
+                "4.) " + TContent.T5_DETAILS4,
+                "5.) " + TContent.T5_DETAILS5));
 
         ListViewAdapter adapter = new ListViewAdapter(getContext(), items);
         listView.setAdapter(adapter);
