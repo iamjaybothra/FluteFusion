@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/store"
+    android:background="@drawable/bg_blur"
+
     tools:context=".RecyclerView.StoreFragment">
 
     <androidx.recyclerview.widget.RecyclerView
