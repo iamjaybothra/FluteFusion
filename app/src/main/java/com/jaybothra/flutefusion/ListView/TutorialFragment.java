@@ -73,10 +73,7 @@ public class TutorialFragment extends Fragment {
         ListView listView = view.findViewById(R.id.listview);
 
         ArrayList<TutorialItems> items = new ArrayList<>();
-        items.add(new TutorialItems("Tutorial 1", R.mipmap.ic_launcher, "Click to Check Details"));
-        items.add(new TutorialItems("Tutorial 2", R.mipmap.ic_launcher, "Click to Check Details"));
-        items.add(new TutorialItems("Tutorial 3", R.mipmap.ic_launcher, "Click to Check Details"));
-        items.add(new TutorialItems("Tutorial 4", R.mipmap.ic_launcher, "Click to Check Details"));
+        items.add(new TutorialItems(TContent.T1_TITLE, R.mipmap.ic_launcher, "Click to Check Details", "a", "b", "c", "d"));
 
         ListViewAdapter adapter = new ListViewAdapter(getContext(), items);
         listView.setAdapter(adapter);
@@ -88,6 +85,10 @@ public class TutorialFragment extends Fragment {
                 bundle.putString("title", items.get(i).getSteps());
                 bundle.putInt("image", items.get(i).getImage());
                 bundle.putString("details", items.get(i).getDetails());
+                bundle.putString("details1", items.get(i).getDetails1());
+                bundle.putString("details2", items.get(i).getDetails2());
+                bundle.putString("details3", items.get(i).getDetails3());
+                bundle.putString("details4", items.get(i).getDetails4());
 
                 Navigation.findNavController(view)
                         .navigate(R.id.action_nav_tutorial_to_tutorialDetailsFragment, bundle);

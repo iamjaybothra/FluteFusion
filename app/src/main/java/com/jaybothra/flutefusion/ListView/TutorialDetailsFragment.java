@@ -73,6 +73,10 @@ public class TutorialDetailsFragment extends Fragment {
         TextView stepsTextView = view.findViewById(R.id.d_steps);
         ImageView imageView = view.findViewById(R.id.d_img);
         TextView detailsTextView = view.findViewById(R.id.d_details);
+        TextView details1TextView = view.findViewById(R.id.d_details1);
+        TextView details2TextView = view.findViewById(R.id.d_details2);
+        TextView details3TextView = view.findViewById(R.id.d_details3);
+        TextView details4TextView = view.findViewById(R.id.d_details4);
 
 
         // Retrieve arguments
@@ -81,11 +85,20 @@ public class TutorialDetailsFragment extends Fragment {
             String title = args.getString("title");
             int imageResource = args.getInt("image");
             String details = args.getString("details");
+            String details1 = args.getString("details1");
+            String details2 = args.getString("details2");
+            String details3 = args.getString("details3");
+            String details4 = args.getString("details4");
+
 
             // Set data to views
             stepsTextView.setText(title);
             imageView.setImageResource(imageResource);
             detailsTextView.setText(details);
+            details1TextView.setText(details1);
+            details2TextView.setText(details2);
+            details3TextView.setText(details3);
+            details4TextView.setText(details4);
         }
 
         return view;
