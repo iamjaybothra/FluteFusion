@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ViewPager.MaintainFragment">
 
 
@@ -15,6 +16,7 @@
         android:paddingBottom="20dp"
         android:shadowColor="#AA2727"
         android:text="TextView"
+        android:textColor="@color/white"
         android:textColorLink="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -42,6 +44,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:text="TextView"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +62,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:text="TextView"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +80,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:text="TextView"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
