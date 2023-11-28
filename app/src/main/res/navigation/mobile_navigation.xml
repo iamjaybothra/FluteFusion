@@ -54,6 +54,6 @@
     <fragment
         android:id="@+id/tutorialDetailsFragment"
         android:name="com.jaybothra.flutefusion.ListView.TutorialDetailsFragment"
-        android:label="fragment_tutorial_details"
+        android:label="Steps to Learn"
         tools:layout="@layout/fragment_tutorial_details" />
 </navigation>
