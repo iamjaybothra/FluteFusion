@@ -30,4 +30,12 @@
     <string name="welcome_description">Welcome to FluteFusion, your ideal companion in learning the enchanting art of flute playing!</string>
     <string name="about_welcome"> As a beginner, discover a wealth of tutorials upon purchasing a flute from our store. Our carefully curated materials allow you to learn comfortably from home, catering to beginners and those seeking to refine their skills. With FluteFusion, unlock the melodious world of flute-playing and begin your musical journey today, immersing yourself in beautiful music from the comfort of home.</string>
     <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="pause1">Pause</string>
+    <string name="scale_name">Scale Name</string>
+    <string name="why_tanpura">Why Need Tanpura while Playing Flute?</string>
+    <string name="why_1">1. Harmonic Support: It creates a continuous drone sound, helping the flutist stay in tune and providing a harmonic background.</string>
+    <string name="why_2">2. Rhythmic Assistance: Its steady pulse aids in maintaining tempo and timing during the performance.</string>
+    <string name="why_3">3. Musical Context: Sets the tonal center and mood of the musical piece, complementing the flute\'s melody within a specific musical framework (raga).</string>
+    <string name="why_4">4. Aesthetic Enhancement: Combining the flute\'s melody with the tanpura\'s drone enriches the overall musical experience for both the performer and the audience.</string>
 </resources>
