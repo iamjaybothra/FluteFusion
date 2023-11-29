@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.TanpuraTablaFragment">
+    android:background="#FFFFFF">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Logo or Title -->
+
+    <!-- SeekBar for audio progress -->
+    <!--android:thumbTint="@color/seek_thumb_color"
+        android:progressBackgroundTint="@color/seek_background_color"
+        android:progressTint="@color/seek_progress_color"
+        android:secondaryProgressTint="@color/seek_secondary_color"-->
+    <!-- Media control buttons (Play, Pause, Forward, Backward) -->
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="160dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/sample" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="101dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:thumb="@drawable/ic_baseline_thumb_up_24" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/controlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnPlay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_play_arrow_24"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="Play" />
+
+        <ImageButton
+            android:id="@+id/btnPause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_pause_24"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="Pause"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

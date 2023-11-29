@@ -29,4 +29,5 @@
 
     <string name="welcome_description">Welcome to FluteFusion, your ideal companion in learning the enchanting art of flute playing!</string>
     <string name="about_welcome"> As a beginner, discover a wealth of tutorials upon purchasing a flute from our store. Our carefully curated materials allow you to learn comfortably from home, catering to beginners and those seeking to refine their skills. With FluteFusion, unlock the melodious world of flute-playing and begin your musical journey today, immersing yourself in beautiful music from the comfort of home.</string>
+    <string name="pause">Pause</string>
 </resources>
