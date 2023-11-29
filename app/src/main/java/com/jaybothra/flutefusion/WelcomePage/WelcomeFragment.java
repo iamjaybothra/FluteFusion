@@ -82,23 +82,9 @@ public class WelcomeFragment extends Fragment {
 
         List<CustomerReview> customerReviews = new ArrayList<>();
         customerReviews.add(new CustomerReview(R.drawable.sample, 5f, "Great app! Very useful."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 4f, "Highly recommended!"));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 5f, "I love the features."));
+        customerReviews.add(new CustomerReview(R.drawable.sample, 4f, "I love the features. Highly recommended!"));
         customerReviews.add(new CustomerReview(R.drawable.sample, 3f, "Easy to use and intuitive."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 4.5f, "Awesome app!"));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 4f, "Useful features."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 3.5f, "Decent app."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 5f, "Absolutely amazing!"));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 4.5f, "Great functionalities."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 1f, "Apps have bugs."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 4.5f, "Satisfied with the app."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 3.5f, "Good but needs updates."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 2.5f, "Needs improvement."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 2.5f, "Not user-friendly."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 3f, "Okayish app."));
-        customerReviews.add(new CustomerReview(R.drawable.sample, 2f, "Disappointed with performance."));
-
-
+        customerReviews.add(new CustomerReview(R.drawable.sample, 1f, "Flute Quality is good but apps have bugs"));
 
         adapter = new CustomerReviewPagerAdapter(customerReviews);
         viewPager.setAdapter(adapter);
