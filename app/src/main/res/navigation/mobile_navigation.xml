@@ -56,4 +56,9 @@
         android:name="com.jaybothra.flutefusion.ListView.TutorialDetailsFragment"
         android:label="Tutorial"
         tools:layout="@layout/fragment_tutorial_details" />
+    <fragment
+        android:id="@+id/nav_contacts"
+        android:name="com.jaybothra.flutefusion.ContactFragment"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact" />
 </navigation>

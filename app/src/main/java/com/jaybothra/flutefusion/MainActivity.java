@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.action_contact) {
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+            navController.navigate(R.id.nav_contacts);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
