@@ -9,7 +9,11 @@
         android:id="@+id/nav_store"
         android:name="com.jaybothra.flutefusion.RecyclerView.StoreFragment"
         android:label="Store"
-        tools:layout="@layout/fragment_store" />
+        tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_nav_store_to_storeDetailFragment"
+            app:destination="@id/nav_storeDetail" />
+    </fragment>
     <fragment
         android:id="@+id/nav_tutorial"
         android:name="com.jaybothra.flutefusion.ListView.TutorialFragment"
@@ -61,4 +65,9 @@
         android:name="com.jaybothra.flutefusion.ContactFragment"
         android:label="Contact Us"
         tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/nav_storeDetail"
+        android:name="com.jaybothra.flutefusion.RecyclerView.StoreDetailFragment"
+        android:label="fragment_store_detail"
+        tools:layout="@layout/fragment_store_detail" />
 </navigation>

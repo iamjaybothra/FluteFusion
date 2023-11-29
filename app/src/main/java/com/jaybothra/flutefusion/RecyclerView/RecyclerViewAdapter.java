@@ -36,7 +36,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.fluteName.setText(listItems.getFluteName());
         holder.priceCut.setText(listItems.getPriceCut());
         holder.price.setText(listItems.getPrice());
-        holder.addToCart.setText(listItems.getAddToCart());
+        holder.addToCart.setImageResource(listItems.getAddToCart());
+        holder.addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Your onClick logic here
+            }
+        });
+
     }
 
 
@@ -52,7 +59,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         protected TextView fluteName;
         protected TextView priceCut;
         protected TextView price;
-        protected TextView addToCart;
+        protected ImageView addToCart;
 
         public CustomViewHolder(View view){
             super(view);
@@ -60,7 +67,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.fluteName = view.findViewById(R.id.list_product);
             this.priceCut = view.findViewById(R.id.list_cutPrice);
             this.price = view.findViewById(R.id.list_price);
-            this.addToCart = view.findViewById(R.id.list_addToCart);
+            this.addToCart = view.findViewById(R.id.list_cart);
 
         }
     }

@@ -5,9 +5,9 @@ public class ListItems {
     private String fluteName;
     private String priceCut;
     private String price;
-    private String addToCart;
+    private int addToCart;
 
-    public ListItems(int image, String fluteName, String priceCut, String price, String addToCart) {
+    public ListItems(int image, String fluteName, String priceCut, String price, int addToCart) {
         this.image = image;
         this.fluteName = fluteName;
         this.priceCut = priceCut;
@@ -48,11 +48,11 @@ public class ListItems {
         this.price = price;
     }
 
-    public String  getAddToCart() {
+    public int getAddToCart() {
         return addToCart;
     }
 
-    public void setAddToCart(String addToCart) {
+    public void setAddToCart(int addToCart) {
         this.addToCart = addToCart;
     }
 
