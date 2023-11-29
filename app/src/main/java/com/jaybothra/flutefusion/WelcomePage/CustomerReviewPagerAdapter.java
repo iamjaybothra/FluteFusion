@@ -36,7 +36,7 @@ public class CustomerReviewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup parent, int position) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.customer_review_item, parent, false);
+        View view = inflater.inflate(R.layout.customer_list_review, parent, false);
 
         ImageView customerImageView = view.findViewById(R.id.c_img);
         RatingBar ratingBar = view.findViewById(R.id.c_rating);

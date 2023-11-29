@@ -100,7 +100,6 @@ public class ContactFragment extends Fragment {
 
         ImageView smsBtn = view.findViewById(R.id.smsBtn);
         smsBtn.setOnClickListener(e -> {
-            // IF SMS PERMISSION IS NOT AVAILABLE
             if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
                 // HAVE I ASKED FOR PERMISSION
                 if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.SEND_SMS)) {
