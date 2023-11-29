@@ -33,7 +33,6 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
 
 
     public TanpuraTablaFragment() {
-        // Required empty public constructor
     }
 
     public static TanpuraTablaFragment newInstance(String param1, String param2) {
@@ -112,7 +111,7 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
                     mediaPlayer.start();
                     btnPlay.setVisibility(View.GONE);
                     btnPause.setVisibility(View.VISIBLE);
-                    startSeekBarUpdate(); // Start updating SeekBar when audio starts
+                    startSeekBarUpdate();
                 }
             }
         });
@@ -132,7 +131,6 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
-                // When audio playback is completed, reset UI
                 btnPlay.setVisibility(View.VISIBLE);
                 btnPause.setVisibility(View.GONE);
             }
@@ -177,23 +175,15 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
                         int currentPosition = mediaPlayer.getCurrentPosition();
                         int totalDuration = mediaPlayer.getDuration();
 
-                        // Calculate time remaining in milliseconds
                         int timeRemaining = totalDuration - currentPosition;
 
-                        // Convert milliseconds to minutes and seconds
                         int minutes = (timeRemaining / 1000) / 60;
                         int seconds = (timeRemaining / 1000) % 60;
-
-                        // Format the time remaining string
                         String timeRemainingStr = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
 
-                        // Update the TextView with the time remaining
                         timeRemainingTextView.setText(timeRemainingStr);
-
-                        // Update SeekBar progress
                         seekBar.setProgress(currentPosition);
                     }else {
-                        // If music is not playing, show the total audio length
                         int totalDuration = mediaPlayer.getDuration();
                         int totalMinutes = (totalDuration / 1000) / 60;
                         int totalSeconds = (totalDuration / 1000) % 60;
@@ -210,7 +200,6 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        // Remove callbacks to prevent memory leaks
         if (handler != null) {
             handler.removeCallbacksAndMessages(null);
         }

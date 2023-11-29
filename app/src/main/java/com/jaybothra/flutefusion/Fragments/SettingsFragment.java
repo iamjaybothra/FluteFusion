@@ -22,7 +22,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
                     String selectedAudio = (String) newValue;
-                    // Store the selected audio for later use
                     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("selected_audio_key", selectedAudio);
