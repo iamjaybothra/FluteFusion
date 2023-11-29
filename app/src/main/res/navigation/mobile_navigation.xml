@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/nav_audio"
         android:name="com.jaybothra.flutefusion.Fragments.TanpuraTablaFragment"
-        android:label="fragment_tanpura_tabla"
+        android:label="Tanpura"
         tools:layout="@layout/fragment_tanpura_tabla" />
     <fragment
         android:id="@+id/nav_settings"
@@ -54,6 +54,6 @@
     <fragment
         android:id="@+id/tutorialDetailsFragment"
         android:name="com.jaybothra.flutefusion.ListView.TutorialDetailsFragment"
-        android:label="fragment_tutorial_details"
+        android:label="Tutorial"
         tools:layout="@layout/fragment_tutorial_details" />
 </navigation>

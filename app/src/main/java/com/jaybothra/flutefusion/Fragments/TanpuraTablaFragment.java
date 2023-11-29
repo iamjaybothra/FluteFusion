@@ -1,7 +1,10 @@
 package com.jaybothra.flutefusion.Fragments;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
+
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 
 import com.jaybothra.flutefusion.R;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 
@@ -41,12 +45,46 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
         return fragment;
     }
 
+    private MediaPlayer getSelectedMediaPlayer() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+        String selectedAudio = preferences.getString("selected_audio_key", "default_value");
+
+        if (selectedAudio.equals("newclass")) {
+            return MediaPlayer.create(getActivity(), R.raw.newclass);
+        } else if (selectedAudio.equals("tanpura_a")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_a);
+        }else if (selectedAudio.equals("tanpura_b")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_b);
+        }else if (selectedAudio.equals("tanpura_c")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_c);
+        }else if (selectedAudio.equals("tanpura_csharp")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_csharp);
+        }else if (selectedAudio.equals("tanpura_d")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_d);
+        }else if (selectedAudio.equals("tanpura_dsharp")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_dsharp);
+        }else if (selectedAudio.equals("tanpura_e")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_e);
+        }else if (selectedAudio.equals("tanpura_f")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_f);
+        }else if (selectedAudio.equals("tanpura_fsharp")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_fsharp);
+        }else if (selectedAudio.equals("tanpura_g")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_g);
+        }else if (selectedAudio.equals("tanpura_gsharp")) {
+            return MediaPlayer.create(getActivity(), R.raw.tanpura_gsharp);
+        }
+
+
+        return null;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tanpura_tabla, container, false);
 
-        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.tanpura_a);
+        mediaPlayer = getSelectedMediaPlayer();
 
         seekBar = view.findViewById(R.id.seekBar);
         btnPlay = view.findViewById(R.id.btnPlay);
@@ -54,6 +92,18 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
         timeRemainingTextView = view.findViewById(R.id.timeline);
         seekBar.setOnSeekBarChangeListener(this);
         handler = new Handler();
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
+        String[] scaleNames = getResources().getStringArray(R.array.audio_list_titles);
+        String selectedScale = preferences.getString("selected_audio_key", "default_value");
+
+        TextView scaleNameTextView = view.findViewById(R.id.scale_name);
+        int selectedIndex = Arrays.asList(getResources().getStringArray(R.array.audio_list_values)).indexOf(selectedScale);
+        if (selectedIndex != -1 && selectedIndex < scaleNames.length) {
+            scaleNameTextView.setText(scaleNames[selectedIndex]);
+        } else {
+            scaleNameTextView.setText("Scale Name");
+        }
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,6 +147,24 @@ public class TanpuraTablaFragment extends Fragment implements SeekBar.OnSeekBarC
         }
 
         return view;
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+            btnPlay.setVisibility(View.VISIBLE);
+            btnPause.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
     private void startSeekBarUpdate() {
         if (mediaPlayer != null) {

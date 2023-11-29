@@ -6,4 +6,13 @@
         app:title="Change Layout"
         app:summary="Grid View | List View"
         app:defaultValue="false" />
+
+
+    <ListPreference
+        app:key="selected_audio"
+        app:title="Select Audio"
+        app:summary="Choose an audio file to play"
+        app:entries="@array/audio_list_titles"
+        app:entryValues="@array/audio_list_values"
+        app:defaultValue="tanpura_c" />
 </PreferenceScreen>

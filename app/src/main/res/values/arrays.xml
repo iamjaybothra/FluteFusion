@@ -9,4 +9,31 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+        <string-array name="audio_list_titles">
+            <item>A Scale</item>
+            <item>B Scale</item>
+            <item>C Scale</item>
+            <item>C# Scale</item>
+            <item>D Scale</item>
+            <item>D# Scale</item>
+            <item>E Scale</item>
+            <item>F Scale</item>
+            <item>F# Scale</item>
+            <item>G Scale</item>
+            <item>G# Scale</item>
+        </string-array>
+        <string-array name="audio_list_values">
+            <item>tanpura_a</item>
+            <item>tanpura_b</item>
+            <item>tanpura_c</item>
+            <item>tanpura_csharp</item>
+            <item>tanpura_d</item>
+            <item>tanpura_dsharp</item>
+            <item>tanpura_e</item>
+            <item>tanpura_f</item>
+            <item>tanpura_fsharp</item>D
+            <item>tanpura_g</item>
+            <item>tanpura_gsharp</item>
+        </string-array>
 </resources>
