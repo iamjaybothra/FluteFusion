@@ -9,13 +9,15 @@ public class ListItems implements Parcelable {
     private String priceCut;
     private String price;
     private int addToCart;
+    private String description;
 
-    public ListItems(int image, String fluteName, String priceCut, String price, int addToCart) {
+    public ListItems(int image, String fluteName, String priceCut, String price, int addToCart, String description) {
         this.image = image;
         this.fluteName = fluteName;
         this.priceCut = priceCut;
         this.price = price;
         this.addToCart = addToCart;
+        this.description = description;
     }
 
     // Parcelable implementation
@@ -25,6 +27,7 @@ public class ListItems implements Parcelable {
         priceCut = in.readString();
         price = in.readString();
         addToCart = in.readInt();
+        description = in.readString();
     }
 
     public static final Creator<ListItems> CREATOR = new Creator<ListItems>() {
@@ -46,11 +49,20 @@ public class ListItems implements Parcelable {
         dest.writeString(priceCut);
         dest.writeString(price);
         dest.writeInt(addToCart);
+        dest.writeString(description);
     }
 
     @Override
     public int describeContents() {
         return 0;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getImage() {
@@ -70,7 +82,7 @@ public class ListItems implements Parcelable {
     }
 
     public String getPriceCut() {
-        return priceCut;
+        return "Price Before: $"+priceCut;
     }
 
     public void setPriceCut(String priceCut) {
@@ -78,7 +90,7 @@ public class ListItems implements Parcelable {
     }
 
     public String getPrice() {
-        return price;
+        return "Current Price: $"+price;
     }
 
     public void setPrice(String price) {
@@ -99,7 +111,4 @@ public class ListItems implements Parcelable {
     }
 
 
-    // Getters and setters (as in your previous code)
-
-    // toString method (as in your previous code)
 }

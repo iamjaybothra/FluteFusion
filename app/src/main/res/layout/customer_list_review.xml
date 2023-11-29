@@ -22,6 +22,7 @@
         android:gravity="bottom|right"
         android:paddingTop="10dp"
         android:text="Swipe for more Reviews >"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/c_img"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -46,6 +47,9 @@
         android:layout_marginBottom="4dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/c_rating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/c_img"

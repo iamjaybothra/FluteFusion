@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
         android:text="Before: "
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -50,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="Price"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -68,5 +68,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/list_cutPrice"
         app:srcCompat="@drawable/add" />
+
+    <TextView
+        android:id="@+id/list_decription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="-9dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

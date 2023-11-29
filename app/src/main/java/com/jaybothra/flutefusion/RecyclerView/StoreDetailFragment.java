@@ -61,10 +61,11 @@ public class StoreDetailFragment extends Fragment {
             TextView detailsFluteName = view.findViewById(R.id.details_flutename);
             ImageView detailsImage = view.findViewById(R.id.details_fluteImage);
             TextView price = view.findViewById(R.id.details_flutePrice);
-
+            TextView desc = view.findViewById(R.id.details_flutedescriprion);
             detailsFluteName.setText(clickedItem.getFluteName());
             detailsImage.setImageResource(clickedItem.getImage());
-            price.setText("Price: $"+clickedItem.getPrice());
+            price.setText(clickedItem.getPrice());
+            desc.setText(clickedItem.getDescription());
 
 
         }

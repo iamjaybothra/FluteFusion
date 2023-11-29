@@ -76,26 +76,83 @@ public class StoreFragment extends Fragment implements RecyclerViewAdapter.OnAdd
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         ArrayList<ListItems> listItems = new ArrayList<>();
-        listItems.add(new ListItems(R.drawable.sample, "Traditional Bamboo Bansuri", "150", "100", R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Indian Bansuri with Carved Design", "200", "120",  R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Bansuri in Key of C", "180", "110",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Handcrafted Bansuri Flute", "220", "130",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Bamboo Bansuri with Velvet Bag", "250", "150",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Professional Bansuri - Key of G", "280", "170",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Bansuri for Beginners - Key of D", "120", "80",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Hand-Painted Bansuri with Peacock Design", "300", "180",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Bansuri Flute in Key of A", "210", "140",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Premium Quality Bansuri", "350", "200",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Rosewood Bansuri - Key of E", "270", "160",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Beginner's Bansuri with Instructional Booklet", "130", "90",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Bansuri in Key of Bb", "190", "120",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Artisan Crafted Bansuri", "320", "190",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Bansuri with Decorative Tassels", "230", "140",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Professional Bansuri - Key of F", "290", "170",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Bamboo Bansuri - Key of G#", "260", "150",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Exotic Bansuri with Brass Inlay", "380", "220",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "Traditional Bansuri with Velvet Case", "270", "160",   R.drawable.add));
-        listItems.add(new ListItems(R.drawable.sample, "High-Quality Bansuri - Key of E", "330", "200",   R.drawable.add));
+
+
+
+        listItems.add(new ListItems(
+                R.drawable.combo,
+                "Combo Set D Base E Base G Base A Base and C Medium Left Hand Bansuri (Flutes) in Matte Round Case",
+                "1436.16",
+                "1203.92",
+                R.drawable.add,
+                "FluteFusion Combo D Base E base G base A base C medium in Matte Round Case With Cleaning Rod")
+        );
+        listItems.add(new ListItems(
+                R.drawable.d,
+                "Professional Bamboo Flute (Right Hand) 23 Inches (58.5 cm) in G Natural Medium",
+                "219.50",
+                "169.99",
+                R.drawable.add,
+                "A professional quality bamboo flute with a rich tone in the G Natural Medium scale. Perfect for stage performances and recordings.")
+        );
+        listItems.add(new ListItems(
+                R.drawable.set,
+                "Full Set Premium Bansuri Flutes (Right Hand) Indian Bamboo Flutes",
+                "3663.82",
+                "2802.92",
+                R.drawable.add,
+                "These 25 flutes; being the only combination of base, medium and small size of Bansuri, are the best for any kind of music. Therefore these bansuri are combined in a set by us with good discount.. \n" +
+                        "You will have to pay for 15 Bansuri and other 10 will be free along with a Flight case to accommodate these Bansuri/Bamboo flutes. ")
+        );
+
+
+        listItems.add(new ListItems(
+                R.drawable.a,
+                "C Natural Medium Bansuri Flute Clearance sale (Right Hand) 19.5 Inches (49 cm)",
+                "162.84",
+                "120.13",
+                R.drawable.add,
+                "C Natural Medium bamboo Flute/Bansuri is a professional quality medium sized Bansuri When the upper three holes are coverd by finger, it's the Indian C natural medium scale. Key note of G natural according to the western style playing. (when all the six holes are covered)"
+        ));
+        listItems.add(new ListItems(
+                        R.drawable.c,
+                        "Indian Bamboo Bansuri Flute - F Sharp Medium (Right Hand) 21 Inches (53 cm)",
+                        "179.99",
+                        "129.99",
+                        R.drawable.add,
+                        "An Indian F Sharp Medium bamboo flute that is handcrafted and designed for a beautiful sound output.")
+                );
+
+        listItems.add(new ListItems(
+                        R.drawable.c,
+                        "Handmade Bass Bamboo Bansuri Flute - D Natural (Right Hand) 30 Inches (76 cm)",
+                        "249.99",
+                        "199.99",
+                        R.drawable.add,
+                        "This handcrafted D Natural bass bamboo flute produces a deep, resonating sound. It's suitable for professional performances.")
+                );
+        listItems.add(new ListItems(
+                R.drawable.b,
+                "Bamboo Transverse Bansuri Flute - G Sharp Medium (Right Hand) 22 Inches (56 cm)",
+                "199.99",
+                "149.99",
+                R.drawable.add,
+                "This Bansuri is specially designed for beginners and has a standard quality G Sharp Medium scale. It's easy to play and provides a melodious tone.")
+        );
+
+        listItems.add(new ListItems(
+                        R.drawable.c,
+                        "Bamboo Bansuri Flute - E Natural Medium (Right Hand) 24 Inches (61 cm)",
+                        "189.99",
+                        "139.99",
+                        R.drawable.add,
+                        "A high-quality E Natural Medium bamboo flute that offers ease of playing and a beautiful tone suitable for both beginners and intermediate players.")
+                );
+
+
+
+
+
 
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(listItems, this);
