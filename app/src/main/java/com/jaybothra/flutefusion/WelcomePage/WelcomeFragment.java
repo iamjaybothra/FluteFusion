@@ -84,6 +84,7 @@ public class WelcomeFragment extends Fragment {
         customerReviews.add(new CustomerReview(R.drawable.sample, 5f, "Great app! Very useful."));
         customerReviews.add(new CustomerReview(R.drawable.sample, 4f, "I love the features. Highly recommended!"));
         customerReviews.add(new CustomerReview(R.drawable.sample, 3f, "Easy to use and intuitive."));
+        customerReviews.add(new CustomerReview(R.drawable.sample, 1f, "Flute Quality is good but apps have bugs"));
 
         adapter = new CustomerReviewPagerAdapter(customerReviews);
         viewPager.setAdapter(adapter);
