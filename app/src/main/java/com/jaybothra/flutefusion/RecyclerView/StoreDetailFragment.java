@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jaybothra.flutefusion.R;
 
@@ -30,20 +33,11 @@ public class StoreDetailFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment StoreDetailFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static StoreDetailFragment newInstance(String param1, String param2) {
+
+    public static StoreDetailFragment newInstance(ListItems listItem) {
         StoreDetailFragment fragment = new StoreDetailFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putParcelable("clicked_item", (Parcelable) listItem); // Assuming ListItems is Parcelable
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,7 +54,22 @@ public class StoreDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_store_detail, container, false);
+        View view =  inflater.inflate(R.layout.fragment_store_detail, container, false);
+        ListItems clickedItem = getArguments().getParcelable("clicked_item");
+        if (clickedItem != null) {
+
+            TextView detailsFluteName = view.findViewById(R.id.details_flutename);
+            ImageView detailsImage = view.findViewById(R.id.details_fluteImage);
+            TextView price = view.findViewById(R.id.details_flutePrice);
+
+            detailsFluteName.setText(clickedItem.getFluteName());
+            detailsImage.setImageResource(clickedItem.getImage());
+            price.setText("Price: $"+clickedItem.getPrice());
+
+
+        }
+
+        return view;
+
     }
 }

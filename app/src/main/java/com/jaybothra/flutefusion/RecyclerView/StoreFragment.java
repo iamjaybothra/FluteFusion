@@ -3,11 +3,13 @@ package com.jaybothra.flutefusion.RecyclerView;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
  * Use the {@link StoreFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class StoreFragment extends Fragment {
+public class StoreFragment extends Fragment implements RecyclerViewAdapter.OnAddToCartClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,6 +70,11 @@ public class StoreFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_store, container, false);
 
+        RecyclerView recyclerView = view.findViewById(R.id.recycle);
+
+        // Set the layout manager before setting the adapter
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         ArrayList<ListItems> listItems = new ArrayList<>();
         listItems.add(new ListItems(R.drawable.sample, "Traditional Bamboo Bansuri", "150", "100", R.drawable.add));
         listItems.add(new ListItems(R.drawable.sample, "Indian Bansuri with Carved Design", "200", "120",  R.drawable.add));
@@ -91,23 +98,21 @@ public class StoreFragment extends Fragment {
         listItems.add(new ListItems(R.drawable.sample, "High-Quality Bansuri - Key of E", "330", "200",   R.drawable.add));
 
 
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(listItems, this);
+        recyclerView.setAdapter(adapter);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycle);
-
-
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-//       recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-////        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL));
-//        boolean isOn = PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("show_store_list", false);
-//        if(isOn){
-//            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-//        }else{
-//            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        }
-
-        recyclerView.setAdapter(new RecyclerViewAdapter(listItems));
         return view;
+    }
+
+    @Override
+    public void onAddToCartClicked(ListItems listItem) {
+        // Navigate to StoreDetailFragment with clicked item's details using Navigation Component
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("clicked_item", (Parcelable) listItem); // Passing clicked item's details
+
+        // Assuming your action ID for navigating to StoreDetailFragment is nav_action_store_to_store_detail
+        Navigation.findNavController(requireView()).navigate(
+                R.id.action_nav_store_to_storeDetailFragment, bundle
+        );
     }
 }

@@ -14,10 +14,12 @@ import com.jaybothra.flutefusion.R;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder> {
+    private OnAddToCartClickListener addToCartClickListener;
 
     ArrayList<ListItems> listItemsArrayList;
-    public RecyclerViewAdapter(ArrayList<ListItems> listItems){
+    public RecyclerViewAdapter(ArrayList<ListItems> listItems, OnAddToCartClickListener listener) {
         this.listItemsArrayList = listItems;
+        this.addToCartClickListener = listener;
     }
 
     @NonNull
@@ -40,7 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Your onClick logic here
+                addToCartClickListener.onAddToCartClicked(listItems);
             }
         });
 
@@ -70,5 +72,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.addToCart = view.findViewById(R.id.list_cart);
 
         }
+    }
+
+    public interface OnAddToCartClickListener {
+        void onAddToCartClicked(ListItems listItem);
     }
 }
