@@ -21,5 +21,12 @@
 
     <style name="Theme.FluteFusion.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.FluteFusion.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" /> <!-- Change to a dark popup overlay -->
+    <style name="Theme.FluteFusion.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+    <style name="Screen_Full" >
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
 </resources>
