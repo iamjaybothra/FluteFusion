@@ -68,6 +68,19 @@
     <fragment
         android:id="@+id/nav_storeDetail"
         android:name="com.jaybothra.flutefusion.RecyclerView.StoreDetailFragment"
-        android:label="fragment_store_detail"
-        tools:layout="@layout/fragment_store_detail" />
+        android:label="Checkout"
+        tools:layout="@layout/fragment_store_detail">
+        <action
+            android:id="@+id/action_nav_storeDetail_to_buyFragment"
+            app:destination="@id/nav_buy" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_buy"
+        android:name="com.jaybothra.flutefusion.RecyclerView.BuyFragment"
+        android:label="Buy Flute"
+        tools:layout="@layout/fragment_buy">
+        <action
+            android:id="@+id/action_nav_buy_to_nav_welcome"
+            app:destination="@id/nav_welcome" />
+    </fragment>
 </navigation>
