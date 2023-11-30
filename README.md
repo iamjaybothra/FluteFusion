@@ -53,15 +53,6 @@ After installation, here's how you can use FluteFusion:
 2. Browse through the curated tutorials to start learning the flute.
 3. Practice and refine your skills using the provided materials.
 
-Include code examples or screenshots if helpful.
-
-## Assets Used
-
-- Images (list approved images)
-- Music
-- Logo
-- Text
-- Fonts (list approved fonts)
 
 ## Hooks for Application
 
@@ -70,9 +61,9 @@ Include code examples or screenshots if helpful.
 
 ## Settings Menu Options
 
-- Price Range
+- Enter Details
 - Flute Scale
-- Currency
+- Tutorial Level
 
 ## License
 
