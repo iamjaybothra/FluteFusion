@@ -123,6 +123,11 @@ public class WelcomeFragment extends Fragment {
                     .navigate(R.id.action_nav_welcome_to_nav_audio);
         });
 
+        Button video = view.findViewById(R.id.video);
+        video.setOnClickListener(e->{
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_welcome_to_nav_video);
+        });
         return view;
     }
 

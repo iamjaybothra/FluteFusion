@@ -21,7 +21,8 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     private List<Integer> videoList;
     private List<String> videoTitles;
     private SimpleExoPlayer player;
-    private Context context; // Add a Context variable
+    private int currentPlayingPosition = -1;
+    private Context context;
 
     public VideoAdapter(Context context, List<Integer> videoList, List<String> videoTitles) {
         this.context = context;
@@ -41,7 +42,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         int resourceId = videoList.get(position);
         String videoTitle = videoTitles.get(position);
-        holder.bind(holder.itemView.getContext(), resourceId, videoTitle);
+        holder.bind(resourceId, videoTitle);
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(@NonNull VideoViewHolder holder) {
+        super.onViewDetachedFromWindow(holder);
+        holder.stopVideo();
     }
 
     @Override
@@ -53,29 +60,71 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
         PlayerView playerView;
         TextView videoTitleTextView;
+        SimpleExoPlayer player;
 
         public VideoViewHolder(@NonNull View itemView) {
             super(itemView);
+
             playerView = itemView.findViewById(R.id.player_view);
             videoTitleTextView = itemView.findViewById(R.id.VideoTitle);
+            player = new SimpleExoPlayer.Builder(itemView.getContext()).build();
+
+            itemView.setOnClickListener(v -> {
+                int position = getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    if (currentPlayingPosition != position) {
+                        stopPlayback();
+                        playVideo(videoList.get(position), position);
+                    } else {
+                        togglePlayback();
+                    }
+                }
+            });
         }
 
-        void bind(Context context, int resourceId, String videoTitle) {
-            SimpleExoPlayer player = new SimpleExoPlayer.Builder(context).build();
-            Uri uri = Uri.parse("android.resource://" + context.getPackageName() + "/" + resourceId);
+        void togglePlayback() {
+            if (player.isPlaying()) {
+                stopVideo();
+            } else {
+                player.setPlayWhenReady(true);
+            }
+        }
+
+        void stopVideo() {
+            if (player != null) {
+                player.setPlayWhenReady(false);
+                currentPlayingPosition = -1;
+            }
+        }
+
+        void playVideo(int resourceId, int position) {
+            stopPlayback();
+            currentPlayingPosition = position;
+
+            Uri uri = Uri.parse("android.resource://" + itemView.getContext().getPackageName() + "/" + resourceId);
             MediaItem mediaItem = MediaItem.fromUri(uri);
             player.setMediaItem(mediaItem);
-            player.setPlayWhenReady(true); // Start playing when ready
+            player.setPlayWhenReady(true);
             player.prepare();
-
             playerView.setPlayer(player);
+        }
+
+        void bind(int resourceId, String videoTitle) {
             videoTitleTextView.setText(videoTitle);
+
+            Uri uri = Uri.parse("android.resource://" + itemView.getContext().getPackageName() + "/" + resourceId);
+            MediaItem mediaItem = MediaItem.fromUri(uri);
+            player.setMediaItem(mediaItem);
+            player.prepare();
+            playerView.setPlayer(player);
         }
     }
-    public void releasePlayer() {
-        if (player != null) {
-            player.release();
-            player = null;
+
+    public void stopPlayback() {
+        for (int i = 0; i < videoList.size(); i++) {
+            if (i != currentPlayingPosition) {
+                notifyItemChanged(i);
+            }
         }
     }
 }
