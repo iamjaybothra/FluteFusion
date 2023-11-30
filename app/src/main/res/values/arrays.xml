@@ -4,11 +4,13 @@
         <item>Reply</item>
         <item>Reply to all</item>
     </string-array>
-
     <string-array name="reply_values">
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+
+
 
         <string-array name="audio_list_titles">
             <item>A Scale</item>
@@ -36,4 +38,20 @@
             <item>tanpura_g</item>
             <item>tanpura_gsharp</item>
         </string-array>
+
+
+
+
+    <string-array name="tutorial_level_titles">
+        <item>Beginner</item>
+        <item>Intermediate</item>
+        <item>Advanced</item>
+    </string-array>
+
+    <string-array name="tutorial_level_values">
+        <item>beginner</item>
+        <item>intermediate</item>
+        <item>advanced</item>
+    </string-array>
+
 </resources>

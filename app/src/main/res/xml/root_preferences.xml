@@ -1,18 +1,58 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <PreferenceCategory
+        app:title="User Details">
 
-    <SwitchPreferenceCompat
-        app:key="show_store_list"
-        app:title="Change Layout"
-        app:summary="Grid View | List View"
-        app:defaultValue="false" />
+        <EditTextPreference
+            app:key="user_name"
+            app:title="Your Name"
+            app:summary="Enter your name"
+            app:dialogTitle="Enter your name"
+            app:defaultValue="" />
+
+        <EditTextPreference
+            app:key="user_email"
+            app:title="Email"
+            app:summary="Enter your email"
+            app:dialogTitle="Enter your email"
+            app:defaultValue="" />
+
+        <EditTextPreference
+            app:key="user_phone"
+            app:title="Phone Number"
+            app:summary="Enter your phone number"
+            app:dialogTitle="Enter your phone number"
+            app:defaultValue="" />
+
+        <EditTextPreference
+            app:key="user_address"
+            app:title="Address"
+            app:summary="Enter your address"
+            app:dialogTitle="Enter your address"
+            app:defaultValue="" />
+
+    </PreferenceCategory>
 
 
-    <ListPreference
-        app:key="selected_audio"
-        app:title="Select Audio"
-        app:summary="Choose an audio file to play"
-        app:entries="@array/audio_list_titles"
-        app:entryValues="@array/audio_list_values"
-        app:defaultValue="tanpura_c" />
+    <PreferenceCategory
+        app:title="Settings">
+        <ListPreference
+            app:key="selected_audio"
+            app:title="Select Audio"
+            app:summary="Choose an audio file to play"
+            app:entries="@array/audio_list_titles"
+            app:entryValues="@array/audio_list_values"
+            app:defaultValue="tanpura_c" />
+
+
+
+        <ListPreference
+            app:key="tutorial_level"
+            app:title="Tutorial Level"
+            app:summary="Select your tutorial level"
+            app:entries="@array/tutorial_level_titles"
+            app:entryValues="@array/tutorial_level_values"
+            app:defaultValue="beginner" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

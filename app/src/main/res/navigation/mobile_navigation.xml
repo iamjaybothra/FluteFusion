@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     android:label="Audio"
-    app:startDestination="@id/nav_welcome">
+    app:startDestination="@id/nav_video">
     <fragment
         android:id="@+id/nav_store"
         android:name="com.jaybothra.flutefusion.RecyclerView.StoreFragment"
@@ -83,4 +83,9 @@
             android:id="@+id/action_nav_buy_to_nav_welcome"
             app:destination="@id/nav_welcome" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_video"
+        android:name="com.jaybothra.flutefusion.Video.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" />
 </navigation>
