@@ -13,7 +13,8 @@ Welcome to FluteFusion, your ultimate companion on your musical journey! Are you
 
 ## Screenshots and Video 
 
- Will Add Assets Later
+ ![alt text]([http://url/to/img.png](https://github.com/iamjaybothra/FluteFusion/blob/main/home.png))
+
 
 ## Overview 
 
