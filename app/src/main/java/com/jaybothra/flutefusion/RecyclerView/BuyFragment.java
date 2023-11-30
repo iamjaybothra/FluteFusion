@@ -1,12 +1,20 @@
 package com.jaybothra.flutefusion.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jaybothra.flutefusion.R;
 
@@ -60,7 +68,48 @@ public class BuyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_buy, container, false);
+        View view = inflater.inflate(R.layout.fragment_buy, container, false);
+        ListItems selectedProduct = getArguments().getParcelable("selected_item");
+        if (selectedProduct != null) {
+
+            ImageView productImage = view.findViewById(R.id.product_image);
+            TextView productName = view.findViewById(R.id.product_name);
+            TextView productPrice = view.findViewById(R.id.product_price);
+
+            productImage.setImageResource(selectedProduct.getImage());
+            productName.setText(selectedProduct.getFluteName());
+            productPrice.setText(selectedProduct.getPrice());
+        }
+        Button buyButton = view.findViewById(R.id.buttonBuy);
+
+        buyButton.setOnClickListener(e->{
+            AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+            builder.setTitle("Confirm Purchase")
+                    .setMessage("Are you sure you want to purchase this item?")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+                            builder.setTitle("Item Purchased")
+                                    .setMessage("Your item has been purchased.")
+                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            // User clicked OK on the second dialog, navigate to the home fragment
+                                            Navigation.findNavController(getView())
+                                                    .navigate(R.id.action_nav_buy_to_nav_welcome);
+                                        }
+                                    })
+                                    .show();                        }
+                    })
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .show();
+        });
+        return view;
     }
+
+
 }

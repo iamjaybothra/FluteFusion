@@ -3,11 +3,13 @@ package com.jaybothra.flutefusion.RecyclerView;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -68,9 +70,21 @@ public class StoreDetailFragment extends Fragment {
             desc.setText(clickedItem.getDescription());
 
 
+            Button buy = view.findViewById(R.id.details_buyNowButton);
+            buy.setOnClickListener(e->{
+                navigateToBuyFragment(clickedItem);
+            });
+
         }
-
         return view;
+    }
+    private void navigateToBuyFragment(ListItems clickedItem) {
+        if (getView() != null) {
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("selected_item", clickedItem);
 
+            Navigation.findNavController(getView())
+                    .navigate(R.id.action_nav_storeDetail_to_buyFragment, bundle);
+        }
     }
 }
