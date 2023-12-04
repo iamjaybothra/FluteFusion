@@ -65,7 +65,7 @@ public class TContent {
 
     //Intermediate
     //--------------------------------------------------Tutorial 1--------------------------------------------------
-    public static final String IT5_TITLE = "1. Advanced Scales and Ragas:\n" +
+    public static final String IT5_TITLE = "Advanced Scales and Ragas" +
             "\n";
     public static final int IT5_IMAGE = R.drawable.t5;
     public static final String IT5_DETAILS1 = "Thaat Exploration: Delve into different thaat systems (musical scales) used in Hindustani classical music. Practice scales such as Bilawal, Bhairav, Yaman, and Bhairavi.";
@@ -76,7 +76,7 @@ public class TContent {
     //--------------------------------------------------Tutorial 2--------------------------------------------------
 
     //--------------------------------------------------Tutorial 3--------------------------------------------------
-    public static final String IT2 = "Technique Refinement:";
+    public static final String IT2 = "Technique Refinement";
     public static final int IIMG2 = R.drawable.it2;
     public static final String I2D1 = "Embouchure and Tone Quality: Continuously work on refining your embouchure to produce a clear, resonant sound. Experiment with different blowing pressures, lip positions, and air control to achieve various tonal colors.";
     public static final String I2D2 = "Note Transitions: Practice smooth transitions between notes, ensuring each note is distinct and played with precision. Work on finger dexterity to effortlessly cover and uncover holes for different pitches.";
@@ -92,7 +92,7 @@ public class TContent {
     public static final String I3D4 = "";
     public static final String I3D5 = "";
     //--------------------------------------------------Tutorial 5--------------------------------------------------
-    public static final String IT4 = "Articulation and Ornamentation:";
+    public static final String IT4 = "Articulation and Ornamentation";
     public static final int IIMG4 = R.drawable.it4;
     public static final String I4D1 = "Advanced Ornamentation: Focus on advanced ornamentation techniques such as Murki (quick ornamentation), Khatka (swift note transitions), and Zamzama (tremolo effect).\n";
     public static final String I4D2 = "Meend and Gamak: Master the art of meend (gliding between notes) and gamak (oscillation of a note) to add depth and emotion to your playing.";
@@ -114,7 +114,7 @@ public class TContent {
 
 //ADVANCE
 
-    public static final String AT1_TITLE = "Complex Compositions:";
+    public static final String AT1_TITLE = "Complex Compositions";
     public static final int AIMG = R.drawable.at1;
     public static final String A1D1 = "Bandish Mastery: Focus on learning intricate compositions (bandish) in multiple ragas. Work on their challenging rhythmic patterns, melodic variations, and embellishments.\n";
     public static final String A1D2 = " ";
@@ -132,7 +132,7 @@ public class TContent {
     public static final String A2D5 = "";
 
 
-    public static final String AT3_TITLE = "Expression and Emotion:";
+    public static final String AT3_TITLE = "Expression and Emotion";
     public static final int AIMG3 = R.drawable.at3;
     public static final String A3D1 = "Dynamic Playing: Master the use of dynamics to convey emotions. Experiment with varying volume, articulation, and speed to express different moods within a raga.";
     public static final String A3D2 = "Sensitivity and Subtlety: Focus on subtle nuances, microtonal variations, and delicate phrasing to express profound emotions in your playing. ";
@@ -141,7 +141,7 @@ public class TContent {
     public static final String A3D5 = "";
 
 
-    public static final String AT4_TITLE = "Collaboration and Fusion:";
+    public static final String AT4_TITLE = "Collaboration and Fusion";
     public static final int AIMG4 = R.drawable.at4;
     public static final String A4D1 = "Cross-Genre Collaboration: Collaborate with musicians from diverse genres to explore fusion music. Experiment with blending Bansuri with jazz, Western classical, or other world music styles.";
     public static final String A4D2 = " ";
@@ -150,7 +150,7 @@ public class TContent {
     public static final String A4D5 = "";
 
 
-    public static final String AT5_TITLE = " Continuous Learning and Innovation:";
+    public static final String AT5_TITLE = " Continuous Learning and Innovation";
     public static final int AIMG5 = R.drawable.at5;
     public static final String A5D1 = "Guru Guidance: Seek guidance from advanced players or gurus to receive personalized feedback and guidance on your playing.";
     public static final String A5D2 = "Innovation and Creativity: Continuously innovate, experiment, and create your musical expressions while staying rooted in classical traditions. ";
