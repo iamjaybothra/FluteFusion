@@ -72,4 +72,4 @@ Once installed, here's how you can make the most of FluteFusion:
 
 ## License
 
-This project is licensed under [license information].
+This project is Copyrighted.
